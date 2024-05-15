@@ -11,10 +11,11 @@ export default {
         primary: "#ff480046",
         secundary:"#ff5722",
         transparent:"#f34d0c00",
-        'custom-blue': '#12003d1f',  // Tu color personalizado
+        'custom-blue': '#12003d1f', 
         'hover-orange': '#ff5722',  // Un color naranja para el hover
      
-       'black-transparent':"#00000050",
+       'black-transparent':"#00000060",
+       'black-trans': '#00000090',  // Tu color personalizado
         boxShadow: {
           'custom-hover': '0 0 15px rgba(233, 67, 2, 0.795)',
           'custom-active': '0 3px 5px rgba(0, 0, 0, 0.2)',
