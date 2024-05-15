@@ -9,8 +9,9 @@ export default {
       
       colors:{
         primary: "#ff480046",
+        secundary:"#ff5722",
         transparent:"#f34d0c00",
-        'custom-blue': '#12003d34',  // Tu color personalizado
+        'custom-blue': '#12003d1f',  // Tu color personalizado
         'hover-orange': '#ff5722',  // Un color naranja para el hover
      
        'black-transparent':"#00000050",
