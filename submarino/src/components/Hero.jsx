@@ -10,10 +10,10 @@ const Hero = () => {
           {/* Overlay para mejorar la legibilidad del texto */}
           <div className="absolute w-full h-full bg-black opacity-50 z-1"></div>
           <div className="relative z-10 text-center text-white">
-              <p className="mb-64 text-lg md:text-4xl text-orange">Navegando en soluciones creativas</p>
-              <button className="mb-12 px-6 py-2 bg-orange-700 border-2 border-white text-white text-lg shadow-lg transition-all duration-300 ease-in-out hover:bg-orange-400 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50 relative top-4">
-                   Sumergete
-                </button>
+              <p className="mb-12 text-lg md:text-5xl text-orange">Navegando en soluciones creativas</p>
+              <button className="mb-60 px-8 py-3 bg-custom-blue border-2 border-white text-white text-2xl font-bold shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-hover-orange focus:ring-opacity-70 relative top-4 backdrop-blur-lg rounded-full hover:shadow-[0_0_20px_4px_rgba(255,87,34,.5)]">
+  Sumergete
+</button>
           </div>
       </section>
   );
