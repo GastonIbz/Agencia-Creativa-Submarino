@@ -1,12 +1,12 @@
 import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import submarineVideo from '../assets/videos/submarino0.mp4';
-const scrollToSoluciones = () => {
-    const solucionesSection = document.getElementById('Soluciones');
-    if (solucionesSection) {
-      solucionesSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 const Hero = () => {
+    const scrollToSoluciones = () => {
+        const solucionesSection = document.getElementById('Soluciones');
+        if (solucionesSection) {
+          solucionesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
   return (
       <section className="relative w-full h-screen flex items-center justify-center">
           <video autoPlay muted loop playsInline className="absolute w-full h-full object-cover z-0">
@@ -33,10 +33,10 @@ const Hero = () => {
                 </div>
                 
                 <div className="flex">
-                <a href="https://www.instagram.com" className="text-white text-3xl transition duration-300 ease-in-out hover:scale-105 rounded-full p-1 sm:p-2 hover:bg-orange-700">
+                <a href="https://www.instagram.com/submarino.cd/" className="text-white text-3xl transition duration-300 ease-in-out hover:scale-105 rounded-full p-1 sm:p-2 hover:bg-orange-700" aria-label="Instagram">
     <FaInstagram className="shadow-lg hover:shadow-2xl" />
 </a>
-<a href="https://www.linkedin.com" className="text-white text-3xl ml-2 sm:ml-4 transition duration-300 ease-in-out hover:scale-105 rounded-full p-1 sm:p-2 hover:bg-orange-700 ">
+<a href="https://www.linkedin.com/company/submarinomkt/" className="text-white text-3xl ml-2 sm:ml-4 transition duration-300 ease-in-out hover:scale-105 rounded-full p-1 sm:p-2 hover:bg-orange-700" aria-label="LinkedIn">
     <FaLinkedinIn className="shadow-lg hover:shadow-2xl" />
 </a>
                 </div>
