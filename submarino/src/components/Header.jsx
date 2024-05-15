@@ -14,11 +14,11 @@ const Header = () => {
             </div>
             {/* Menú Escritorio */}
             <nav className="hidden xl:flex bg-transparent w-full h-full items-center justify-end gap-11 mr-10 z-50">
-    <a href="#" className="text-white py-3 text-xl transition duration-500 ease-in-out px-4 rounded-full bg-transparent hover:bg-primary">
-        Nosotros
+    <a href="#Soluciones" className="text-white py-3 text-xl transition duration-500 ease-in-out px-4 rounded-full bg-transparent hover:bg-primary">
+        Soluciones
     </a>
     <a href="#" className="text-white py-3 text-xl transition duration-500 ease-in-out px-4 rounded-full bg-transparent hover:bg-primary">
-        Soluciones
+        Nosotros
     </a>
     <a href="#" className="text-white py-3 text-xl transition duration-500 ease-in-out px-4 rounded-full bg-transparent hover:bg-primary">
         Portafolio
@@ -29,8 +29,8 @@ const Header = () => {
 </nav>
            {/* Menú Móvil */}
            <nav className={`fixed bg-black bg-opacity-40 w-[86%] md:w-[40%] xl:hidden h-full ${showMenu ? "left-0" : "-left-full"} top-0 flex flex-col items-center justify-center gap-10 transition-all duration-500 backdrop-blur-md z-50`}>
+                <a href="#Soluciones" className="text-white py-2 text-xl">Soluciones</a>
                 <a href="#" className="text-white py-2 text-xl">Nosotros</a>
-                <a href="#" className="text-white py-2 text-xl">Soluciones</a>
                 <a href="#" className="text-white py-2 text-xl">Portafolio</a>
                 <a href="#" className="text-white py-2 text-xl">Contacto</a>
             </nav>
