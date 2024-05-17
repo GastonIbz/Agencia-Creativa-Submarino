@@ -37,8 +37,8 @@ const Video = () => {
                 </video>
             </div>
    {/* Botones en la parte inferior derecha */}
-   <div className="absolute bottom-8 right-12 flex items-center space-x-4">
-                <button onClick={scrollToTop} className="text-white p-4 rounded-full bg-orange-600 hover:bg-black transition duration-400 ease-in-out text-2xl">
+   <div  id="Nosotros" className="absolute bottom-8 right-6 flex items-center space-x-4">
+                <button onClick={scrollToTop} className="text-white p-6 rounded-full bg-orange-600 hover:bg-black transition duration-400 ease-in-out text-2xl">
                     <FaArrowUp />
                 </button>
                 {/* Boton de WPP
