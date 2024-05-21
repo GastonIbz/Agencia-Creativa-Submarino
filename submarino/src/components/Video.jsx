@@ -1,15 +1,9 @@
 import submarineVideo from '../assets/videos/submarino8.mp4';
 import backgroundImage from '../assets/imgs/Subma.png';
-import {  FaArrowUp } from 'react-icons/fa';
+
 
 const Video = () => {
-    // Función para desplazarse hacia el inicio de la página
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
+ 
     return (
         <div id="Soluciones" className="relative w-full h-screen overflow-hidden bg-black">
             {/* Imagen de fondo con efecto de opacidad suave */}
@@ -37,17 +31,14 @@ const Video = () => {
                 </video>
             </div>
    {/* Botones en la parte inferior derecha */}
-   <div  id="Nosotros" className="absolute bottom-8 right-6 flex items-center space-x-4">
-                <button onClick={scrollToTop} className="text-white p-6 rounded-full bg-orange-600 hover:bg-black transition duration-400 ease-in-out text-2xl">
-                    <FaArrowUp />
-                </button>
+ 
                 {/* Boton de WPP
                 <a href="https://wa.me/1234567890" className="text-white p-3 rounded-full bg-green-500 hover:bg-green-700 transition duration-300 ease-in-out text-3xl">
                     <FaWhatsapp />
                 </a>
                 */}
             </div>
-        </div>
+ 
     );
 }
 
