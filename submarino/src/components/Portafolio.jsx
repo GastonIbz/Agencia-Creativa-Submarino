@@ -43,11 +43,13 @@ const Portafolio = () => {
         },
         {
             id: 6,
-            title: "Proyecto 6",
-            staticImage: staticImage2,
-            animatedImage: animatedImage2,
+            title: "Proyecto 5",
+            staticImage: staticImage1,
+            animatedImage: animatedImage1,
             link: "#"
         },
+    
+     
         // Agrega más proyectos según sea necesario
     ];
 
@@ -67,7 +69,7 @@ const Portafolio = () => {
 
     return (
         <section className="bg-blue-500 text-white py-8">
-            <div  id="Portafolio" className="container mx-auto px-4 sm:px-6 lg:px-24">
+            <div  id="Portafolio" className="container mx-auto px-4 sm:px-6 lg:px-36">
                 <h2 className="text-3xl text-center font-bold mb-4">Portafolio</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
                     {allProjects.slice(0, visibleProjects).map((project) => (
@@ -91,7 +93,7 @@ const Portafolio = () => {
                     <div className="flex justify-center mt-8">
                         <button 
                             onClick={handleLoadMore} 
-                            className="mb-60 px-8 py-3 bg-orange-500 border-2 border-white text-white text-1xl font-bold shadow-lg transition-all duration-100 ease-in-out focus:outline-none focus:ring-4 focus:ring-hover-orange focus:ring-opacity-50 relative top-4 backdrop-blur-lg rounded-full hover:shadow-[0_0_70px_4px_rgba(255,87,34,.5)]">
+                            className="mb-64 px-8 py-3 bg-orange-500 border-2 border-white text-white text-1xl font-bold shadow-lg transition-all duration-100 ease-in-out focus:outline-none focus:ring-4 focus:ring-hover-orange focus:ring-opacity-50 relative top-4 backdrop-blur-lg rounded-full hover:shadow-[0_0_70px_4px_rgba(255,87,34,.5)]">
                             Más proyectos
                         </button>
                     </div>

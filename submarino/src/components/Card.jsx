@@ -36,12 +36,12 @@ const Card = () => {
 
     return (
         <div id="Nosotros" className="bg-blue-300 text-gray-900 py-20">
-            <h2   className="text-3xl text-orange-500 font-bold text-center mb-8">¿Cómo podemos ayudarte?</h2>
+            <h2   className="text-3xl text-orange-500 font-bold text-center pt-11 mb-12">¿Cómo podemos ayudarte?</h2>
             <div className="container mx-auto px-24">
                 <div className="flex flex-wrap justify-center">
                     {services.map((service, index) => (
                         <div key={index} className="m-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-                            <div className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl hover:shadow-orange-600/50 transition-shadow duration-400 ease-in-out flex flex-col items-center text-center" style={{ minHeight: '250px' }}>
+                            <div className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl hover:shadow-orange-600/50 transition-shadow duration-400 ease-in-out flex flex-col items-center text-center" style={{ minHeight: '300px' }}>
                                 <div className="mb-4">{service.icon}</div>
                                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                                 <p className="font-sans text-xl">{service.description}</p>
