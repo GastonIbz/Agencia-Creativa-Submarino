@@ -14,7 +14,7 @@ function App() {
       <Video />
       <Card />
       <Portafolio />
-       <ChatBot/>
+      <ChatBot/>
     </div>
   );
 }

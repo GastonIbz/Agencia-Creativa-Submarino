@@ -1,4 +1,4 @@
-import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+
 import submarineVideo from '../assets/videos/submarino0.mp4';
 const Hero = () => {
     const scrollToSoluciones = () => {
@@ -27,19 +27,12 @@ const Hero = () => {
 </div>
 
    {/* Texto e íconos en el fondo */}
-   <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-8 lg:px-16 xl:px-16 py-4 flex justify-between items-end">
-                <div className="text-white text-lg md:text-xl">
-                    Submarino | Creativo
+   <div className="absolute bottom-2 left-0 right-0 px-4 sm:px-8 lg:px-16 xl:px-16 py-8  flex justify-between items-end">
+                <div className="text-white text-xl md:text-xl pl-14 ">
+                    Submarino | Soluciones Creativas
                 </div>
                 
-                <div className="flex">
-                <a href="https://www.instagram.com/submarino.cd/" className="text-white text-3xl transition duration-300 ease-in-out hover:scale-105 rounded-full p-1 sm:p-2 hover:bg-orange-700" aria-label="Instagram">
-    <FaInstagram className="shadow-lg hover:shadow-2xl" />
-</a>
-<a href="https://www.linkedin.com/company/submarinomkt/" className="text-white text-3xl ml-2 sm:ml-4 transition duration-300 ease-in-out hover:scale-105 rounded-full p-1 sm:p-2 hover:bg-orange-700" aria-label="LinkedIn">
-    <FaLinkedinIn className="shadow-lg hover:shadow-2xl" />
-</a>
-                </div>
+        
             </div>
         </section>
     );

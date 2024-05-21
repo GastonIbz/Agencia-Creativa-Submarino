@@ -1,149 +1,135 @@
-import { useState } from 'react';
-import { FaCommentAlt, FaTimes, FaPaperPlane } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+import { FaCommentAlt, FaTimes, FaArrowLeft } from 'react-icons/fa';
+import logoChat from '../assets/imgs/logo-chat-2.png';
 
 const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatLog, setChatLog] = useState([]);
-  const [userInput, setUserInput] = useState('');
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(true);
+  const [showOptions, setShowOptions] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const toggleChat = () => {
-    setIsOpen(!isOpen);
-    if (!isOpen) {
-      // Initialize a new chat session when chat is opened
-      setChatLog([
-        { sender: 'bot', message: 'Hola navegante, mi nombre es IB-A. ¿En qué puedo ayudarte?' }
-      ]);
-    }
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Cambia el valor de acuerdo a tus necesidades
+    };
+
+    handleResize(); // Llamar a la función al principio para establecer el valor inicial
+
+    window.addEventListener('resize', handleResize); // Escuchar cambios en el tamaño de la ventana
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Limpiar el efecto al desmontar el componente
+    };
+  }, []);
+
+  const toggleView = () => {
+    setIsChatOpen(!isChatOpen);
+    setShowOptions(true); // Restablecer opciones al abrir el chat
+    setChatLog([]); // Limpiar el historial de chat al cerrar el chat
   };
 
-  const handleUserInput = (e) => {
-    setUserInput(e.target.value);
-  };
-
-  const handleSendMessage = () => {
-    if (userInput.trim() !== '') {
-      processMessage(userInput);
-    }
-  };
-
-  const handleButtonClick = (userMessage) => {
-    processMessage(userMessage);
-    setShowPrivacyPolicy(false);
-  };
-
-  const processMessage = (message) => {
-    let botResponse = '';
-
-    switch (message.toLowerCase()) {
-      case 'quiero reservar una reunión':
-        botResponse = 'Para reservar una reunión, por favor sigue el siguiente enlace: [enlace de reunión]';
-        break;
-      case 'quiero recibir presupuesto por correo':
-        botResponse = 'Para recibir un presupuesto, por favor envíanos un correo a: [correo de contacto]';
-        break;
-      case 'quiero ofrecerte mis servicios':
-        botResponse = 'Para ofrecer tus servicios, por favor visita nuestra sección de proveedores: [enlace de proveedores]';
-        break;
-      case 'soy cliente y necesito tu ayuda':
-        botResponse = 'Para recibir ayuda, por favor contáctanos a través de nuestro soporte al cliente: [enlace de soporte]';
-        break;
-      default:
-        botResponse = 'Lo siento, no entiendo tu solicitud. Por favor, intenta nuevamente.';
-    }
-
+  const handleOptionClick = (message) => {
     setChatLog([
       ...chatLog,
       { sender: 'user', message },
-      { sender: 'bot', message: botResponse }
+      { sender: 'bot', message: getBotResponse(message) }
     ]);
-    setUserInput('');
+    setShowOptions(false); // Ocultar las opciones después de seleccionar una
   };
+
+  const handleBackButtonClick = () => {
+    setShowOptions(true); // Mostrar opciones al volver atrás
+    setChatLog([]); // Limpiar el historial de chat al volver atrás
+  };
+
+  const getBotResponse = (userMessage) => {
+    switch (userMessage.toLowerCase()) {
+      case 'quiero reservar una reunión':
+        return 'Para reservar una reunión, por favor sigue el siguiente enlace: [enlace de reunión]';
+      case 'quiero recibir presupuesto por correo':
+        return 'Para recibir un presupuesto, por favor envíanos un correo a: [correo de contacto]';
+      case 'quiero ofrecerte mis servicios':
+        return 'Para ofrecer tus servicios, por favor visita nuestra sección de proveedores: [enlace de proveedores]';
+      case 'soy cliente y necesito tu ayuda':
+        return 'Para recibir ayuda, por favor contáctanos a través de nuestro soporte al cliente: [enlace de soporte]';
+      default:
+        return 'Lo siento, no entiendo tu solicitud. Por favor, elige una de las opciones disponibles.';
+    }
+  };
+
+  // Verificar si es un dispositivo móvil
+  if (isMobile) {
+    return null; // No renderizar el chat en dispositivos móviles
+  }
 
   return (
     <>
       <button
-        onClick={toggleChat}
-        className="fixed bottom-4 right-8 w-12 h-12 md:w-16 md:h-16 bg-orange-700 text-white p-2 md:p-4 rounded-full shadow-lg focus:outline-none flex items-center justify-center"
+        onClick={toggleView}
+        className="fixed bottom-6 right-12 w-12 h-12 md:w-16 md:h-16 bg-orange-700 text-white p-2 md:p-4 rounded-full shadow-lg focus:outline-none flex items-center justify-center"
       >
-        {isOpen ? (
+        {isChatOpen ? (
           <FaTimes className="text-lg md:text-2xl" />
         ) : (
           <FaCommentAlt className="text-lg md:text-2xl" />
         )}
       </button>
-      {isOpen && (
-        <div className="fixed bottom-16 right-2 w-72 md:bottom-20 md:right-4 md:w-80 bg-white rounded-lg shadow-lg flex flex-col">
-          <div className="bg-orange-700 text-white p-3 md:p-4 rounded-t-lg flex items-center justify-between">
-            <img src="https://placehold.co/30x30" alt="IB-A Logo" className="w-12 h-12 md:w-12 md:h-12 rounded-full " />
-            <span className="text-xl md:text-xl mr-36">IB-A</span>
-            <button onClick={toggleChat} className="text-white">
+      {isChatOpen && (
+        <div className="fixed bottom-16 right-2 w-70 md:bottom-24 md:right-14 md:w-80 bg-white rounded-lg shadow-lg flex flex-col overflow-hidden">
+          <div className="bg-orange-700 text-white p-3 md:p-3 rounded-t-lg flex items-center justify-between">
+            <img src={logoChat} alt="IB-A Logo" className="w-12 h-12 md:w-12 md:h-12 rounded-full" />
+            <span className="text-xl md:text-xl font-bold mr-12">Chatea con IB-A</span>
+            <button onClick={toggleView} className="text-white">
               <FaTimes className="text-lg md:text-xl" />
             </button>
           </div>
-          <div className="flex-1 p-4 md:p-2 overflow-y-auto">
+          {/* Saludo inicial */}
+          <div className="p-3 md:p-4 bg-gray-200 rounded-b-lg text-center">
+            <p className="text-xs md:text-base">¡Hola! ¿En qué puedo ayudarte hoy?</p>
+          </div>
+          <div className="flex-1 p-4 md:p-0 overflow-y-auto">
             {chatLog.map((entry, index) => (
-              <div key={index} className={`mb-2 text-xs md:text-sm ${entry.sender === 'bot' ? 'text-gray-800' : 'text-blue-900'}`}>
+              <div key={index} className={`mb-2 pl-2 pt-5 text-xs md:text-base ${entry.sender === 'bot' ? 'text-black' : 'text-blue-900'}`}>
                 {entry.message}
-                <div className={`${entry.sender === 'user' ? 'text-right' : ''}`}>
-                  {entry.sender === 'user' && (
-                    <span className="text-xs text-gray-500">03:06 AM</span>
-                  )}
-                </div>
               </div>
             ))}
           </div>
-          {showPrivacyPolicy && (
-            <div className="p-4 md:p-2">
-              <div className="space-y-1 md:space-y-2">
+          {showOptions ? (
+            <div className="p-3 md:p-4  bg-orange-200 rounded-b-lg">
+              <div className="space-y-2">
                 <button
-                  onClick={() => handleButtonClick('Quiero reservar una reunión')}
-                  className="w-full bg-white text-gray-900 border border-gray-900 py-1 md:py-2 rounded-lg flex items-center justify-center text-xs md:text-sm"
+                  onClick={() => handleOptionClick('Quiero reservar una reunión')}
+                  className="w-full bg-gray-200 text-black border border-gray-900 py-1 md:py-2 rounded-lg flex items-center justify-center text-xs md:text-base transition duration-300 hover:bg-gray-400"
                 >
                   <span>Quiero reservar una reunión</span>
                 </button>
                 <button
-                  onClick={() => handleButtonClick('Quiero recibir presupuesto por correo')}
-                  className="w-full bg-white text-gray-900 border border-gray-900 py-1 md:py-2 rounded-lg flex items-center justify-center text-xs md:text-sm"
+                  onClick={() => handleOptionClick('Quiero recibir presupuesto por correo')}
+                  className="w-full bg-white text-black border border-gray-900 py-1 md:py-2 rounded-lg flex items-center justify-center text-xs md:text-base transition duration-300 hover:bg-gray-400"
                 >
                   <span>Quiero recibir presupuesto por correo</span>
                 </button>
                 <button
-                  onClick={() => handleButtonClick('Quiero ofrecerte mis servicios')}
-                  className="w-full bg-white text-gray-900 border border-gray-900 py-1 md:py-2 rounded-lg flex items-center justify-center text-xs md:text-sm"
+                  onClick={() => handleOptionClick('Quiero ofrecerte mis servicios')}
+                  className="w-full bg-white text-black border border-gray-900 py-1 md:py-2 rounded-lg flex items-center justify-center text-xs md:text-base transition duration-300 hover:bg-gray-400"
                 >
                   <span>Quiero ofrecerte mis servicios</span>
                 </button>
                 <button
-                  onClick={() => handleButtonClick('Soy cliente y necesito tu ayuda')}
-                  className="w-full bg-white text-gray-900 border border-gray-900 py-1 md:py-2 rounded-lg flex items-center justify-center text-xs md:text-sm"
+                  onClick={() => handleOptionClick('Soy cliente y necesito tu ayuda')}
+                  className="w-full bg-white text-black border border-gray-900 py-1 md:py-2 rounded-lg flex items-center justify-center text-xs md:text-base transition duration-300 hover:bg-gray-400"
                 >
                   <span>Soy cliente y necesito tu ayuda</span>
                 </button>
               </div>
             </div>
-          )}
-          <div className="p-3 md:p-4 bg-gray-100 rounded-b-lg">
-            <p className="text-xs mb-1 md:mb-2">
-              Submarino utiliza la información que proporcionas para ponerse en contacto contigo en relación con contenido. consulta nuestra{' '}
-              <a href="#" className="text-orange-500">política de privacidad</a>.
-            </p>
-            <div className="flex items-center">
-              <input
-                type="text"
-                placeholder="Escribe un mensaje"
-                value={userInput}
-                onChange={handleUserInput}
-                className="w-full p-1 md:p-2 border border-gray-300 rounded-l-lg text-xs md:text-sm"
-              />
-              <button
-                onClick={handleSendMessage}
-                className="p-0 md:p-2 bg-orange-700 text-white rounded-r-lg"
-              >
-                <FaPaperPlane />
+          ) : (
+            <div className="p-3 md:p-5 bg-gray-300 rounded-b-lg">
+              <button onClick={handleBackButtonClick} className="text-orange-600 hover:text-black flex items-center text-xl">
+                <FaArrowLeft className="mr-3 mt-1 " /> Volver a las opciones
               </button>
             </div>
-          </div>
+          )}
         </div>
       )}
     </>
