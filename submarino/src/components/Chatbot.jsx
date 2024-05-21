@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaCommentAlt, FaTimes, FaArrowLeft } from 'react-icons/fa';
-import logoChat from '../assets/imgs/logo-chat-2.png';
+import logoChat from '../assets/imgs/logo-chat.png';
 
 const Chatbot = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -85,7 +85,7 @@ const Chatbot = () => {
           </div>
           {/* Saludo inicial */}
           <div className="p-3 md:p-4 bg-gray-200 rounded-b-lg text-center">
-            <p className="text-xs md:text-base">¡Hola! ¿En qué puedo ayudarte hoy?</p>
+            <p className="text-xs md:text-xl">¡Hola! ¿En qué puedo ayudarte?</p>
           </div>
           <div className="flex-1 p-4 md:p-0 overflow-y-auto">
             {chatLog.map((entry, index) => (
