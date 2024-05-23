@@ -23,7 +23,7 @@ const Header = () => {
     <a href="#Portafolio" className="text-white py-3 text-xl transition duration-500 ease-in-out px-4 rounded-full bg-transparent hover:bg-primary">
         Portafolio
     </a>
-    <a href="#" className="text-white py-3 text-xl transition duration-500 ease-in-out px-4 rounded-full bg-transparent hover:bg-primary">
+    <a href="#Contacto" className="text-white py-3 text-xl transition duration-500 ease-in-out px-4 rounded-full bg-transparent hover:bg-primary">
         Contacto
     </a>
 </nav>
@@ -32,7 +32,7 @@ const Header = () => {
                 <a href="#Soluciones" className="text-white py-2 text-xl">Soluciones</a>
                 <a href="#Nosotros" className="text-white py-2 text-xl">Nosotros</a>
                 <a href="#Portafolio" className="text-white py-2 text-xl">Portafolio</a>
-                <a href="#" className="text-white py-2 text-xl">Contacto</a>
+                <a href="#Contacto" className="text-white py-2 text-xl">Contacto</a>
             </nav>
 
 
