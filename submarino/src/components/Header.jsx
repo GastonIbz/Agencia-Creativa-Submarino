@@ -6,7 +6,7 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState(false);
 
     return (
-        <header className="flex items-center justify-between w-full py-4 px-4 h-[10vh] bg-black-transparent text-white z-50 fixed top-0 left-0 right-0">
+        <header className="flex items-center justify-between w-full py-4 px-5 h-[14vh] bg-black-transparent text-white z-50 fixed top-0 left-0 right-0">
             <div className="xl:w-1/6 text-center -mt-4">
                 <a href="#">
                     <img src={Logo} alt="Submarino Logo" className="h-16 mt-4" />

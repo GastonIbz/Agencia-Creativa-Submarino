@@ -52,17 +52,29 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-900 to-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="mt-12 max-w-md w-full space-y-8 bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-600">
+    <div id="Contacto" className="flex flex-col items-center justify-center py-64 px-4 sm:px-6 lg:px-8" style={{
+      backgroundImage: `radial-gradient(circle at 60% 40%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 3%, transparent 100%),
+                         radial-gradient(circle at 64% 14%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 3%, transparent 100%),
+                         radial-gradient(circle at 28% 95%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 3%, transparent 100%),
+                         radial-gradient(circle at 44% 75%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 3%, transparent 100%),
+                         radial-gradient(circle at 59% 30%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 3%, transparent 100%),
+                         radial-gradient(circle at 55% 89%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 7%, transparent 100%),
+                         radial-gradient(circle at 11% 47%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 7%, transparent 100%),
+                         radial-gradient(circle at 65% 40%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 5%, transparent 100%),
+                         radial-gradient(circle at 98% 38%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 5%, transparent 100%),
+                         radial-gradient(circle at 46% 88%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 5%, transparent 100%),
+                         radial-gradient(circle at 47% 39%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 5%, transparent 100%),
+                         linear-gradient(0deg, #0B1A30, #1A3661)`
+  }}>      <div className="mb-12 max-w-md space-y-4 bg-gray-800 p-8 rounded-lg shadow-lg border border-orange-500">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-white">Contáctanos</h2>
+          <h2 className="text-3xl font-base text-orange-500">Contáctanos</h2>
           <p className="mt-2 text-sm text-gray-400">
-            Empezá el viaje con un simple paso
+            Muchas gracias por tu visita, el equipo de submarino estara encantado de hablar contigo!
           </p>
         </div>
         {submitted && (
-          <div className="bg-green-500 text-white text-center p-3 rounded">
-            ¡Gracias por tu mensaje!
+          <div className="bg-orange-500 text-white text-center p-3 rounded">
+            ¡Gracias por tu mensaje navegante, el equipo de submarino te contestara pronto! 
           </div>
         )}
         <form className="mt-8 space-y-6" onSubmit={handleSubmit} noValidate>
@@ -139,14 +151,14 @@ const ContactForm = () => {
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105 duration-300"
+              className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white  bg-purple-900 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105 duration-300"
             >
               Enviar
             </button>
           </div>
         </form>
         <div className="text-center text-gray-400 text-sm mt-6">
-          <p>Este sitio y sus formularios están protegidos por reCAPTCHA y la <a href="#" className="text-green-400 hover:underline">Política de privacidad</a> y <a href="#" className="text-green-400 hover:underline">Condiciones de servicio</a> de Google.</p>
+          <p>Este sitio y sus formularios están protegidos por reCAPTCHA y la <a href="#" className="text-red-500 hover:underline">Política de privacidad</a> y <a href="#" className="text-red-500 hover:underline">Condiciones de servicio</a> de Google.</p>
         </div>
       </div>
     </div>

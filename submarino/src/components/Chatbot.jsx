@@ -10,22 +10,22 @@ const Chatbot = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Cambia el valor de acuerdo a tus necesidades
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Llamar a la función al principio para establecer el valor inicial
+    handleResize();
 
-    window.addEventListener('resize', handleResize); // Escuchar cambios en el tamaño de la ventana
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize); // Limpiar el efecto al desmontar el componente
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   const toggleView = () => {
     setIsChatOpen(!isChatOpen);
-    setShowOptions(true); // Restablecer opciones al abrir el chat
-    setChatLog([]); // Limpiar el historial de chat al cerrar el chat
+    setShowOptions(true);
+    setChatLog([]);
   };
 
   const handleOptionClick = (message) => {
@@ -34,12 +34,12 @@ const Chatbot = () => {
       { sender: 'user', message },
       { sender: 'bot', message: getBotResponse(message) }
     ]);
-    setShowOptions(false); // Ocultar las opciones después de seleccionar una
+    setShowOptions(false);
   };
 
   const handleBackButtonClick = () => {
-    setShowOptions(true); // Mostrar opciones al volver atrás
-    setChatLog([]); // Limpiar el historial de chat al volver atrás
+    setShowOptions(true);
+    setChatLog([]);
   };
 
   const getBotResponse = (userMessage) => {
@@ -59,7 +59,7 @@ const Chatbot = () => {
 
   // Verificar si es un dispositivo móvil
   if (isMobile) {
-    return null; // No renderizar el chat en dispositivos móviles
+    return null;
   }
 
   return (
@@ -83,7 +83,6 @@ const Chatbot = () => {
               <FaTimes className="text-lg md:text-xl" />
             </button>
           </div>
-          {/* Saludo inicial */}
           <div className="p-3 md:p-4 bg-gray-200 rounded-b-lg text-center">
             <p className="text-xs md:text-xl">¡Hola! ¿En qué puedo ayudarte?</p>
           </div>
@@ -95,7 +94,7 @@ const Chatbot = () => {
             ))}
           </div>
           {showOptions ? (
-            <div className="p-3 md:p-4  bg-orange-200 rounded-b-lg">
+            <div className="p-3 md:p-4 bg-orange-200 rounded-b-lg">
               <div className="space-y-2">
                 <button
                   onClick={() => handleOptionClick('Quiero reservar una reunión')}
@@ -126,7 +125,7 @@ const Chatbot = () => {
           ) : (
             <div className="p-3 md:p-5 bg-gray-300 rounded-b-lg">
               <button onClick={handleBackButtonClick} className="text-orange-600 hover:text-black flex items-center text-xl">
-                <FaArrowLeft className="mr-3 mt-1 " /> Volver a las opciones
+                <FaArrowLeft className="mr-3 mt-1" /> Volver a las opciones
               </button>
             </div>
           )}

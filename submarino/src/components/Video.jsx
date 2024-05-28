@@ -15,9 +15,9 @@ const Video = () => {
             />
 
             {/* Contenedor de video centrado con bordes y sombras suaves */}
-            <div className="relative flex justify-center items-center h-full">
+            <div className="relative flex justify-center items-center h-full pt-28">
                 <video
-                    className="w-11/12 md:w-5/6 lg:w-3/4 xl:w-2/3 h-auto border-4 border-white rounded shadow-xl transition-all duration-300 ease-in-out"
+                    className="w-11/12 md:w-5/6 lg:w-3/4 xl:w-2/3 h-auto  border-4 border-orange-400 rounded shadow-xl transition-all duration-300 ease-in-out"
                     src={submarineVideo}
                     type="video/mp4"
                     controls
@@ -30,13 +30,7 @@ const Video = () => {
                     Your browser does not support the video tag.
                 </video>
             </div>
-   {/* Botones en la parte inferior derecha */}
- 
-                {/* Boton de WPP
-                <a href="https://wa.me/1234567890" className="text-white p-3 rounded-full bg-green-500 hover:bg-green-700 transition duration-300 ease-in-out text-3xl">
-                    <FaWhatsapp />
-                </a>
-                */}
+
             </div>
  
     );

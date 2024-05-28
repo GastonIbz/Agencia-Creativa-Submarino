@@ -5,8 +5,12 @@ import Card from './components/Card';
 import Portafolio from './components/Portafolio';
 import Chatbot from './components/Chatbot';
 import ContactForm from './components/ContactForm';
+import Footer from './components/Footer';
+
+
 
 function App() {
+  
   return (
     <div>
       <Header />
@@ -16,6 +20,8 @@ function App() {
       <Portafolio />
       <ContactForm />
       <Chatbot />
+      <Footer/>
+
     </div>
   );
 }
