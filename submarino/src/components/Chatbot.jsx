@@ -66,7 +66,7 @@ const Chatbot = () => {
     <>
       <button
         onClick={toggleView}
-        className="fixed bottom-6 right-12 w-12 h-12 md:w-16 md:h-16 bg-orange-700 text-white p-2 md:p-4 rounded-full shadow-lg focus:outline-none flex items-center justify-center"
+        className="fixed bottom-20 right-12 w-12 h-12 md:w-16 md:h-16 bg-orange-700 text-white p-2 md:p-4 rounded-full shadow-lg focus:outline-none flex items-center justify-center"
       >
         {isChatOpen ? (
           <FaTimes className="text-lg md:text-2xl" />
