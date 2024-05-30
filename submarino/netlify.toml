@@ -1,5 +1,5 @@
 [build]
-  base = ""  
+  base = ""  # Deja esto vacío si tu archivo package.json está en el directorio raíz
   publish = "dist"  
   command = "npm run build"
 

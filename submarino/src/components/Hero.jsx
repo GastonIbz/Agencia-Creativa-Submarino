@@ -29,7 +29,7 @@ Conocenos 🌎
    {/* Texto e íconos en el fondo */}
    <div className="absolute bottom-2 left-0  px-4 sm:px-8 lg:px-16 xl:px-16 py-8  flex justify-between items-end">
                 <div className="text-white text-xl md:text-xl pl-14 ">
-                    Submarino | Soluciones Creativas
+                    Submarino | Soluciones 
                 </div>
                 
         
