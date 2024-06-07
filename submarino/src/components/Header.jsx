@@ -29,10 +29,10 @@ const Header = () => {
 </nav>
            {/* Menú Móvil */}
            <nav className={`fixed bg-black bg-opacity-40 w-[86%] md:w-[40%] xl:hidden h-full ${showMenu ? "left-0" : "-left-full"} top-0 flex flex-col items-center justify-center gap-10 transition-all duration-500 backdrop-blur-md z-50`}>
-                <a href="#Soluciones" className="text-white py-2 text-xl">Soluciones</a>
-                <a href="#Nosotros" className="text-white py-2 text-xl">Nosotros</a>
-                <a href="#Portafolio" className="text-white py-2 text-xl">Portafolio</a>
-                <a href="#Contacto" className="text-white py-2 text-xl">Contacto</a>
+                <a href="#Soluciones" className="text-white py-2 text-3xl">Soluciones</a>
+                <a href="#Nosotros" className="text-white py-2 text-3xl">Nosotros</a>
+                <a href="#Portafolio" className="text-white py-2 text-3xl">Portafolio</a>
+                <a href="#Contacto" className="text-white py-2 text-3xl">Contacto</a>
             </nav>
 
 
