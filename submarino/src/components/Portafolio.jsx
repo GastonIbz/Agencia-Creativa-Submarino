@@ -68,25 +68,13 @@ const Portafolio = () => {
     };
 
     return (
-        <section id="Portafolio" className="text-white pt-64" style={{
-            backgroundImage: `radial-gradient(circle at 60% 40%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 3%, transparent 100%),
-                             
-                               radial-gradient(circle at 28% 95%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 3%, transparent 100%),
-                               radial-gradient(circle at 44% 75%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 3%, transparent 100%),
-                            radial-gradient(circle at 34% 71%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 3%, transparent 100%),
-                               radial-gradient(circle at 59% 30%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 3%, transparent 100%),                         
-                               radial-gradient(circle at 55% 89%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 7%, transparent 100%),
-                               radial-gradient(circle at 11% 47%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 7%, transparent 100%),
-                               radial-gradient(circle at 65% 40%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 5%, transparent 100%),
-                               radial-gradient(circle at 98% 38%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 5%, transparent 100%),
-                               radial-gradient(circle at 46% 88%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 5%, transparent 100%),
-                               radial-gradient(circle at 47% 39%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 5%, transparent 100%),
-                               linear-gradient(0deg, #1A3661, #244980)`, // Replaced HSLA with Hex for the linear gradient
+        <section id="Portafolio" className="text-white pt-32" style={{
+            backgroundImage: `linear-gradient(0deg, #1A3661, #244980)`, // Replaced HSLA with Hex for the linear gradient
             backgroundColor: '#224273' // Background color as fallback
         }}>
-            <div  className="container mx-auto px-16 sm:px-0 lg:px-56">
-                <h2 className="text-5xl text-center font-bold  mb-0 text-orange-500 ">Portafolio</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-20">
+            <div  className="container mx-auto px-16 sm:px-0 lg:px-60">
+                <h2 className="text-5xl text-center font-bold  mb-02 text-orange-500 ">Portafolio</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-14">
                     {allProjects.slice(0, visibleProjects).map((project) => (
                         <div 
                             key={project.id} 

@@ -63,7 +63,7 @@ const Chatbot = () => {
   }
 
   return (
-    <>
+    <div className="hidden md:block"> {/* Este div asegura que el componente solo se vea en pantallas md o más grandes */}
       <button
         onClick={toggleView}
         className="fixed bottom-4 right-12 w-12 h-12 md:w-16 md:h-16 bg-orange-700 text-white p-2 md:p-4 rounded-full shadow-lg focus:outline-none flex items-center justify-center"
@@ -131,7 +131,7 @@ const Chatbot = () => {
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

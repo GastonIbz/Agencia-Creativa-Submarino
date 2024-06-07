@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     nombre: '',
@@ -52,33 +51,23 @@ const ContactForm = () => {
   };
 
   return (
-    <div id="Contacto" className="flex flex-col items-center justify-center py-64 px-4 sm:px-6 lg:px-8" style={{
-      backgroundImage: `radial-gradient(circle at 60% 40%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 3%, transparent 100%),
-                         radial-gradient(circle at 64% 14%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 3%, transparent 100%),
-                         radial-gradient(circle at 28% 95%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 3%, transparent 100%),
-                         radial-gradient(circle at 44% 75%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 3%, transparent 100%),
-                         radial-gradient(circle at 59% 30%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 3%, transparent 100%),
-                         radial-gradient(circle at 55% 89%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 7%, transparent 100%),
-                         radial-gradient(circle at 11% 47%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 7%, transparent 100%),
-                         radial-gradient(circle at 65% 40%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 5%, transparent 100%),
-                         radial-gradient(circle at 98% 38%, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.02) 3%, transparent 5%, transparent 100%),
-                         radial-gradient(circle at 46% 88%, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 3%, transparent 5%, transparent 100%),
-                         radial-gradient(circle at 47% 39%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 3%, transparent 5%, transparent 100%),
-                         linear-gradient(0deg, #0B1A30, #1A3661)`
-  }}>      <div className="mb-12 max-w-md space-y-4 bg-gray-800 p-8 rounded-lg shadow-lg border border-orange-500">
+    <div id="Contacto" className="flex flex-col items-center justify-center py-32 px-4 sm:px-6 lg:px-8" style={{
+      backgroundImage: `linear-gradient(0deg, #0B1A30, #1A3661)`
+    }}>
+      <div className="mb-12 sm:max-w-md space-y-4 bg-gray-800 p-4 sm:p-8 rounded-lg shadow-lg border border-orange-600">
         <div className="text-center">
-          <h2 className="text-3xl font-base text-orange-500">Contáctanos</h2>
-          <p className="mt-2 text-sm text-gray-400">
-            Muchas gracias por tu visita, el equipo de submarino estara encantado de hablar contigo!
+          <h2 className="text-2xl font-bold sm:text-3xl font-base text-orange-600">Contáctanos</h2>
+          <p className="mt-2 text-lg sm:text-base text-gray-400">
+            El equipo de submarino estará encantado de hablar contigo!
           </p>
         </div>
         {submitted && (
           <div className="bg-orange-500 text-white text-center p-3 rounded">
-            ¡Gracias por tu mensaje navegante, el equipo de submarino te contestara pronto! 
+            ¡Gracias por tu mensaje navegante, el equipo de submarino te contestará pronto!
           </div>
         )}
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit} noValidate>
-          <div className="grid grid-cols-1 gap-4">
+        <form className="mt-8 space-y-2" onSubmit={handleSubmit} noValidate>
+          <div className="grid grid-cols-1 gap-3">
             <div>
               <label htmlFor="nombre" className="sr-only">Nombre</label>
               <input
@@ -89,9 +78,9 @@ const ContactForm = () => {
                 placeholder="Nombre *"
                 value={formData.nombre}
                 onChange={handleChange}
-                className={`appearance-none rounded-md block w-full px-3 py-2 border ${errors.nombre ? 'border-orange-500' : 'border-gray-700'} bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-300`}
+                className={`appearance-none rounded-md block w-full px-3 py-2 border ${errors.nombre ? 'border-orange-500' : 'border-gray-700'} bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm sm:py-3 transition duration-300`}
               />
-              {errors.nombre && <p className="text-orange-500 text-sm mt-2">{errors.nombre}</p>}
+              {errors.nombre && <p className="text-orange-500 text-xl mt-2">{errors.nombre}</p>}
             </div>
             <div>
               <label htmlFor="email" className="sr-only">Email</label>
@@ -103,7 +92,7 @@ const ContactForm = () => {
                 placeholder="Email *"
                 value={formData.email}
                 onChange={handleChange}
-                className={`appearance-none rounded-md block w-full px-3 py-2 border ${errors.email ? 'border-orange-500' : 'border-gray-700'} bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-300`}
+                className={`appearance-none rounded-md block w-full px-3 py-2 border ${errors.email ? 'border-orange-500' : 'border-gray-700'} bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm sm:py-3 transition duration-300`}
               />
               {errors.email && <p className="text-orange-500 text-sm mt-2">{errors.email}</p>}
             </div>
@@ -117,7 +106,7 @@ const ContactForm = () => {
                 placeholder="Teléfono *"
                 value={formData.telefono}
                 onChange={handleChange}
-                className={`appearance-none rounded-md block w-full px-3 py-2 border ${errors.telefono ? 'border-orange-500' : 'border-gray-700'} bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-300`}
+                className={`appearance-none rounded-md block w-full px-3 py-2 border ${errors.telefono ? 'border-orange-500' : 'border-gray-700'} bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm sm:py-3 transition duration-300`}
               />
               {errors.telefono && <p className="text-orange-500 text-sm mt-2">{errors.telefono}</p>}
             </div>
@@ -130,7 +119,7 @@ const ContactForm = () => {
                 placeholder="Empresa"
                 value={formData.empresa}
                 onChange={handleChange}
-                className="appearance-none rounded-md block w-full px-3 py-2 border border-gray-700 bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-300"
+                className="appearance-none rounded-md block w-full px-3 py-2 border border-gray-700 bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm sm:py-3 transition duration-300"
               />
             </div>
           </div>
@@ -143,7 +132,7 @@ const ContactForm = () => {
               placeholder="Mensaje *"
               value={formData.mensaje}
               onChange={handleChange}
-              className={`appearance-none rounded-md block w-full px-3 py-2 border ${errors.mensaje ? 'border-orange-500' : 'border-gray-700'} bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition duration-300`}
+              className={`appearance-none rounded-md block w-full px-3 py-2 border ${errors.mensaje ? 'border-orange-500' : 'border-gray-700'} bg-gray-900 placeholder-gray-500 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm sm:py-3 transition duration-300`}
               rows="4"
             ></textarea>
             {errors.mensaje && <p className="text-orange-500 text-sm mt-2">{errors.mensaje}</p>}
@@ -151,14 +140,14 @@ const ContactForm = () => {
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white  bg-purple-900 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105 duration-300"
+              className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-purple-900 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105 duration-300"
             >
               Enviar
             </button>
           </div>
         </form>
         <div className="text-center text-gray-400 text-sm mt-6">
-          <p>Este sitio y sus formularios están protegidos por reCAPTCHA y la <a href="#" className="text-red-500 hover:underline">Política de privacidad</a> y <a href="#" className="text-red-500 hover:underline">Condiciones de servicio</a> de Google.</p>
+          <p>Este sitio y sus formularios están protegidos por reCAPTCHA y la <a href="#" className="text-orange-600 hover:underline">Política de privacidad</a> y <a href="#" className="text-orange-600 hover:underline">Condiciones de servicio</a> de Google.</p>
         </div>
       </div>
     </div>
