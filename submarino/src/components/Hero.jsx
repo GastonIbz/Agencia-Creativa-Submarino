@@ -28,7 +28,7 @@ const Hero = () => {
             <div className="absolute w-full h-full bg-black opacity-50 z-1"></div>
 
             <div className="relative z-10 text-center text-white">
-                <p className="pb-12 text-xl font-semibold md:text-5xl text-orange">Navegando en soluciones creativas</p>
+                <p className="pb-12 text-xl font-semibold md:text-3xl text-orange">Navegando en soluciones creativas</p>
 
                 <button
                     className="mb-36 px-6 py-4 bg-custom-blue border-2 border-orange-600 text-white text-xl font-semibold shadow-lg transition-all duration-100 ease-in-out focus:outline-none focus:ring-4 focus:ring-hover-orange focus:ring-opacity-50 relative top-0 backdrop-blur-lg rounded-full hover:shadow-[0_0_70px_4px_rgba(255,87,34,.5)]"

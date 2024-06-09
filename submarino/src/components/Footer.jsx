@@ -41,10 +41,10 @@ const Footer = () => {
             <div className="pr-4">
               <h4 className="font-bold mb-3 text-xl">Navegación</h4>
               <ul>
-                <li className="hover:underline cursor-pointer text-base"><a href="#nosotros">Nosotros</a></li>
-                <li className="hover:underline cursor-pointer text-base"><a href="#soluciones">Soluciones</a></li>
-                <li className="hover:underline cursor-pointer text-base"><a href="#portafolio">Portafolio</a></li>
-                <li className="hover:underline cursor-pointer text-base"><a href="#contacto">Contacto</a></li>
+                <li className="hover:underline cursor-pointer text-base"><a href="#Nosotros">Nosotros</a></li>
+                <li className="hover:underline cursor-pointer text-base"><a href="#Soluciones">Soluciones</a></li>
+                <li className="hover:underline cursor-pointer text-base"><a href="#Portafolio">Portafolio</a></li>
+                <li className="hover:underline cursor-pointer text-base"><a href="#Contacto">Contacto</a></li>
               </ul>
             </div>
             <div>

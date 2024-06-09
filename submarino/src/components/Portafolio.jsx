@@ -68,7 +68,7 @@ const Portafolio = () => {
     };
 
     return (
-        <section id="Portafolio" className="text-white pt-32" style={{
+        <section id="Portafolio" className="text-white pt-40" style={{
             backgroundImage: `linear-gradient(0deg, #1A3661, #244980)`, // Replaced HSLA with Hex for the linear gradient
             backgroundColor: '#224273' // Background color as fallback
         }}>

@@ -35,10 +35,10 @@ const Card = () => {
   ];
 
   return (
-    <div className="text-gray-900 pt-32 pb-80" style={{
+    <div id="Soluciones" className="text-gray-900 pt-8" style={{
       backgroundImage: `linear-gradient(0deg, #244980, #4575BD)`
     }}>
-      <h2 id="Soluciones" className="text-5xl text-orange-500 font-bold text-center mb-0 pt-32">Soluciones</h2>
+      <h2  className="text-5xl text-orange-500 font-bold text-center mb-0 pt-32">Soluciones</h2>
       <div className="container mx-auto pt-0">
         <div className="flex flex-wrap justify-center">
           {services.map((service, index) => (

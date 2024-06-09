@@ -66,7 +66,7 @@ const Chatbot = () => {
     <div className="hidden md:block"> {/* Este div asegura que el componente solo se vea en pantallas md o más grandes */}
       <button
         onClick={toggleView}
-        className="fixed bottom-4 right-12 w-12 h-12 md:w-16 md:h-16 bg-orange-700 text-white p-2 md:p-4 rounded-full shadow-lg focus:outline-none flex items-center justify-center"
+        className="fixed bottom-7 right-12 w-12 h-12 md:w-12 md:h-12 bg-orange-700 text-white p-2 md:p-4 rounded-full shadow-lg focus:outline-none flex items-center justify-center"
       >
         {isChatOpen ? (
           <FaTimes className="text-lg md:text-2xl" />
@@ -75,16 +75,16 @@ const Chatbot = () => {
         )}
       </button>
       {isChatOpen && (
-        <div className="fixed bottom-16 right-2 w-70 md:bottom-24 md:right-14 md:w-80 bg-white rounded-lg shadow-lg flex flex-col overflow-hidden">
-          <div className="bg-orange-700 text-white p-3 md:p-3 rounded-t-lg flex items-center justify-between">
+        <div className="fixed bottom-20 right-2 w-70 md:bottom-20 md:right-14 md:w-80 bg-white rounded-lg shadow-lg flex flex-col overflow-hidden">
+          <div className="bg-orange-700 text-white p-3 md:p-2 rounded-t-lg flex items-center justify-between">
             <img src={logoChat} alt="IB-A Logo" className="w-12 h-12 md:w-12 md:h-12 rounded-full" />
             <span className="text-xl md:text-xl font-bold mr-12">Chatea con IB-A</span>
             <button onClick={toggleView} className="text-white">
-              <FaTimes className="text-lg md:text-xl" />
+              <FaTimes className="text-lg md:text-xl mr-4 mt-1" />
             </button>
           </div>
-          <div className="p-3 md:p-4 bg-gray-200 rounded-b-lg text-center">
-            <p className="text-xs md:text-xl">¡Hola! ¿En qué puedo ayudarte?</p>
+          <div className="p-3 md:p-2 bg-gray-200 rounded-b-lg text-center">
+            <p className="text-xs md:text-lg font-semibold">¡Hola! ¿En qué puedo ayudarte?</p>
           </div>
           <div className="flex-1 p-4 md:p-0 overflow-y-auto">
             {chatLog.map((entry, index) => (

@@ -51,13 +51,13 @@ const ContactForm = () => {
   };
 
   return (
-    <div id="Contacto" className="flex flex-col items-center justify-center py-32 px-4 sm:px-6 lg:px-8" style={{
+    <div id="Contacto" className="flex flex-col items-center justify-center py-52 px-4 sm:px-6 lg:px-8" style={{
       backgroundImage: `linear-gradient(0deg, #0B1A30, #1A3661)`
     }}>
-      <div className="mb-12 sm:max-w-md space-y-4 bg-gray-800 p-4 sm:p-8 rounded-lg shadow-lg border border-orange-600">
+      <div className="mb-12 sm:max-w-md space-y-8 bg-gray-800 p-4 sm:p-8 rounded-lg shadow-lg border border-orange-600">
         <div className="text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl font-base text-orange-600">Contáctanos</h2>
-          <p className="mt-2 text-lg sm:text-base text-gray-400">
+          <h2 className="text-3xl font-bold sm:text-3xl text-orange-600">Contáctanos</h2>
+          <p className="mt-2 text-lg sm:text-2xl font-medium text-gray-400">
             El equipo de submarino estará encantado de hablar contigo!
           </p>
         </div>
@@ -145,10 +145,7 @@ const ContactForm = () => {
               Enviar
             </button>
           </div>
-        </form>
-        <div className="text-center text-gray-400 text-sm mt-6">
-          <p>Este sitio y sus formularios están protegidos por reCAPTCHA y la <a href="#" className="text-orange-600 hover:underline">Política de privacidad</a> y <a href="#" className="text-orange-600 hover:underline">Condiciones de servicio</a> de Google.</p>
-        </div>
+        </form> 
       </div>
     </div>
   );
